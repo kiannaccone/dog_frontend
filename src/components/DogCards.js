@@ -1,15 +1,14 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
-
-
-
-function DogCards ({dog:{name, hobby, quote, image}}) {
-    return (
-        <Cards>
-            <img src= {image} alt = {name}/>
-            <h4>{name}</h4> 
-        </Cards>
-    )
+function DogCards({ dog: { name, hobby, quote, image } }) {
+  return (
+    <Cards>
+      <img src={image} alt={name} />
+      <h4>{name}</h4>
+      <button></button>
+      <button></button>
+    </Cards>
+  );
 }
 
 export default DogCards;
@@ -35,4 +34,4 @@ const Cards = styled.div`
    
     
 
-`
+`;
