@@ -1,9 +1,9 @@
-function DogInfo () {
-    return (
-        <div>
-
-        </div>
-    )
+function DogInfo() {
+  return (
+    <div>
+      <p>Info</p>
+    </div>
+  );
 }
 
 export default DogInfo;

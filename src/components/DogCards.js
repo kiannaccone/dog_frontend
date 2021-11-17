@@ -4,9 +4,13 @@ function DogCards({ dog: { name, hobby, quote, image } }) {
   return (
     <Cards>
       <img src={image} alt={name} />
-      <h4>{name}</h4>
-      <button></button>
-      <button></button>
+      <h1>{name}</h1>
+      <h2>{hobby}</h2>
+      <h4>{quote}</h4>
+      <br></br>
+      <button>Go to Info</button>
+      <br></br>
+      <button>Retire Doggo</button>
     </Cards>
   );
 }

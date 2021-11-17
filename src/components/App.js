@@ -3,49 +3,45 @@ import NavBar from "./NavBar";
 import DogContainer from "./DogContainer";
 import DogInfo from "./DogInfo";
 import HeistList from "./HeistList";
-import { Route, Switch} from 'react-router-dom';
-import {useState, useEffect} from 'react'
-
-
-
+import { Route, Switch } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 function App() {
-
   const [dogList, setDogList] = useState([]);
-  const [heistList, setHeistList] = useState([])
+  const [heistList, setHeistList] = useState([]);
 
-  let dogUrl = "http://localhost:9292/dogs"
+  let dogUrl = "http://localhost:9292/dogs";
 
   useEffect(() => {
     fetch(dogUrl)
-    .then((resp) => resp.json())
-    .then(setDogList)
-  }, [])
+      .then((resp) => resp.json())
+      .then(setDogList);
+  }, []);
 
-  let heistUrl = "http://localhost:9292/heists"
+  let heistUrl = "http://localhost:9292/heists";
 
   useEffect(() => {
     fetch(heistUrl)
-    .then((resp) => resp.json())
-    .then(setHeistList)
-  }, [])
+      .then((resp) => resp.json())
+      .then(setHeistList);
+  }, []);
 
   return (
     <div>
-     <NavBar />
+      <NavBar />
       <Switch>
         <Route exact path="/home">
           <Home />
         </Route>
-      <Route exact path="/heistdogs">
-        <DogContainer dogList = {dogList}/>
-      </Route>
-      <Route exact path="/heistlists">
-        <HeistList heistList = {heistList} />
-      </Route>
-      <Route exact path="/doginfo">
-        <DogInfo />
-      </Route>
+        <Route exact path="/heistdogs">
+          <DogContainer dogList={dogList} />
+        </Route>
+        <Route exact path="/heistlists">
+          <HeistList heistList={heistList} />
+        </Route>
+        <Route exact path="/doginfo">
+          <DogInfo />
+        </Route>
       </Switch>
     </div>
   );

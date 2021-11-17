@@ -1,15 +1,10 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 import DogCards from "./DogCards";
 
-function DogContainer ({dogList}) {
+function DogContainer({ dogList }) {
+  const dogCards = dogList.map((dog) => <DogCards key={dog.id} dog={dog} />);
 
-const dogCards = dogList.map((dog) => <DogCards key = {dog.id} dog={dog} /> )
-
-    return (
-        <CardContainer>
-            {dogCards}
-        </CardContainer>
-    )
+  return <CardContainer>{dogCards}</CardContainer>;
 }
 
 export default DogContainer;
@@ -22,4 +17,4 @@ justify-content: space-around;
 //     width:410px;
 //     height: 160px;
 }
-`
+`;

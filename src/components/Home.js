@@ -1,6 +1,4 @@
 import HeistList from "./HeistList";
-import { Route } from "react-router-dom";
-import { withRouter } from "react-router-dom";
 
 function Home() {
   const handleSubmit = (e) => {
