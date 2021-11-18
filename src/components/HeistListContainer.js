@@ -1,3 +1,5 @@
+import HeistListCards from "./HeistListCards";
+
 function HeistListContainer () {
     return (
         <div>

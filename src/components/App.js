@@ -2,7 +2,7 @@ import Home from "./Home";
 import NavBar from "./NavBar";
 import DogContainer from "./DogContainer";
 import DogInfo from "./DogInfo";
-import HeistList from "./HeistList";
+import HeistListContainer from "./HeistListContainer";
 import { Route, Switch } from "react-router-dom";
 import { useState, useEffect } from "react";
 
@@ -37,7 +37,7 @@ function App() {
           <DogContainer dogList={dogList} />
         </Route>
         <Route exact path="/heistlists">
-          <HeistList heistList={heistList} />
+          <HeistListContainer heistList={heistList} />
         </Route>
         <Route exact path="/doginfo/:id">
           <DogInfo />
