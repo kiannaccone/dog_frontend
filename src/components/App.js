@@ -30,7 +30,7 @@ function App() {
     <div>
       <NavBar />
       <Switch>
-        <Route exact path="/home">
+        <Route exact path="/">
           <Home />
         </Route>
         <Route exact path="/heistdogs">
@@ -39,7 +39,7 @@ function App() {
         <Route exact path="/heistlists">
           <HeistList heistList={heistList} />
         </Route>
-        <Route exact path="/doginfo">
+        <Route exact path="/doginfo/:id">
           <DogInfo />
         </Route>
       </Switch>
