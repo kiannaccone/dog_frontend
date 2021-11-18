@@ -7,7 +7,7 @@ function DogInfo() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    window.location.href = "/heistlist";
+    window.location.href = "/heistlists";
   };
   
     const [dogInfo, setDogInfo] = useState([]);
