@@ -37,7 +37,7 @@ function App() {
           <DogContainer dogList={dogList} />
         </Route>
         <Route exact path="/heistlists">
-          <HeistListContainer heistList={heistList} />
+          <HeistListContainer heistList={heistList} setHeistList={setHeistList} />
         </Route>
         <Route exact path="/doginfo/:id">
           <DogInfo />

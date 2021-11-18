@@ -46,6 +46,7 @@ function Home({setHeistList}) {
       <h2>Start your heist below:</h2>
       <Image src= {pokerdogs}
         alt="pokerdogs"/>
+      <br/>
         <Form>
       <form  onSubmit={handleSubmit}>
         <label>
@@ -125,11 +126,12 @@ const HomeStyle = styled.div`
 // `
 
 const Image = styled.img `
-  width: 45%;
-  margin: 0.25em;
-  padding: 1em 24em;
-  object-positon: center;
-  align-self:center;
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+
 
 
 `
