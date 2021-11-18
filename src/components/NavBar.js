@@ -4,7 +4,7 @@ import styled from 'styled-components';
 function NavBar () {
     return (
         <MenuBar>
-            <li><NavLink to ="/home">Home</NavLink></li>
+            <li><NavLink to ="/">Home</NavLink></li>
            <li><NavLink to ="/heistdogs">Heist Dog's</NavLink></li>
            <li><NavLink to ="/heistlists">Heist's</NavLink></li>
         </MenuBar>

@@ -1,12 +1,12 @@
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
 
-function DogCards({ dog: { name, hobby, quote, image } }) {
+function DogCards({ dog: { name, hobby, quote, image, id } }) {
 
   let history = useHistory();
   const handleClick = (e) => {
     e.preventDefault();
-    history.push(`/doginfo/id`);
+    history.push(`/doginfo/${id}`);
     console.log(e.target);
   };
 
@@ -14,7 +14,6 @@ function DogCards({ dog: { name, hobby, quote, image } }) {
   return (
     <Cards onClick={handleClick}>
       <img src={image} alt={name} />
-      <br/>
       <h1>{name}</h1>
     </Cards>
   );
