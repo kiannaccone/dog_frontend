@@ -4,6 +4,11 @@ import DogCards from "./DogCards";
 import styled from "styled-components";
 
 function DogInfo() {
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    window.location.href = "/heistlist";
+  };
   
     const [dogInfo, setDogInfo] = useState([]);
 
@@ -20,7 +25,7 @@ function DogInfo() {
 
     console.log(id)
 
-
+    
   return (
     <div>
       <DogCards dog = {dogInfo}/>
@@ -29,7 +34,9 @@ function DogInfo() {
       <Hobby>
       <p>Hobby: {dogInfo.hobby}</p>
       <p>Favorite Michael Scott: "{dogInfo.quote}"</p>
-      </Hobby>
+      <button onClick={handleSubmit}>Add to Heist</button>
+      </Hobby>'
+      
     </div>
   );
   // console.log({dog})

@@ -36,7 +36,7 @@ function Home() {
         </label>
         <br/>
         <br/>
-        <button onClick={handleSubmit}>Submit Hiest</button>
+        <button onClick={handleSubmit}>Create Heist</button>
         <br/>
         <br/>
         <br/>
