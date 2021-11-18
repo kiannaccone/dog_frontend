@@ -31,7 +31,7 @@ function App() {
       <NavBar />
       <Switch>
         <Route exact path="/">
-          <Home />
+          <Home setHeistList = {setHeistList}/>
         </Route>
         <Route exact path="/heistdogs">
           <DogContainer dogList={dogList} />

@@ -1,11 +1,42 @@
 import HeistList from "./HeistList";
+import React, { useState } from "react"
+import {useHistory} from "react-router-dom"
 import styled from 'styled-components';
 import pokerdogs from "./pokerdogs.jpeg"
 
-function Home() {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    window.location.href = "/heistdogs";
+function Home({setHeistList}) {
+    let history = useHistory()
+    function routeToDogs(e) {
+        history.push(`/heistdogs`);
+    }
+    
+    const newHeist = {
+      name: "",
+      creator_name: ""
+    }
+    
+    const [newHeistInfo, setNewHeistInfo] = useState(newHeist)
+
+    function handleAdd(e) {
+      setNewHeistInfo({...newHeistInfo,[e.target.name]: e.target.value})
+      console.log(newHeistInfo)
+    }
+   
+    function handleSubmit (e) {
+      e.preventDefault();
+      fetch('http://localhost:9292/heists', {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newHeistInfo),
+    })
+        .then((resp) => resp.json())
+        .then((data) => {
+          console.log(data)
+            setHeistList((currentHeists) => [data, ...currentHeists]);
+            setNewHeistInfo(newHeist);
+            })
   };
 
   return (
@@ -15,35 +46,45 @@ function Home() {
       <h2>Start your heist below:</h2>
       <Image src= {pokerdogs}
         alt="pokerdogs"/>
-      <Form>
+        <Form>
+      <form  onSubmit={handleSubmit}>
         <label>
           Name your Heist:
           <input
+            className = "name"
             type="text"
-            name="heistname"
+            name="name"
             placeholder="Heist Name..."
+            value={newHeistInfo.name}
+            onChange={handleAdd}
           ></input>
         </label>
+        <br/>
         <br/>
         <label>
-        <br/>
           Boss name:
           <input
+            className = "creator"
             type="text"
-            name="creatorname"
+            name="creator_name"
             placeholder="Mastermind Name..."
+            value={newHeistInfo.creator_name}
+            onChange={handleAdd}
           ></input>
         </label>
         <br/>
         <br/>
-        <button onClick={handleSubmit}>Create Heist</button>
+        <br/>
+        <button type="submit">Create Heist</button>
         <br/>
         <br/>
         <br/>
+      </form>
       </Form>
     </HomeStyle>
   );
 }
+// onClick={routeToDogs}
 
 export default Home;
 
