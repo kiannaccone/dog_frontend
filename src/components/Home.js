@@ -3,19 +3,24 @@ import React, { useState } from "react"
 import {useHistory} from "react-router-dom"
 import styled from 'styled-components';
 import pokerdogs from "./pokerdogs.jpeg"
+    
+
+const newHeist = {
+  name: "",
+  creator_name: ""
+};
 
 function Home({setHeistList}) {
+  const [newHeistInfo, setNewHeistInfo] = useState(newHeist)
+
     let history = useHistory()
-    function routeToDogs(e) {
-        history.push(`/heistdogs`);
-    }
+    const handleCreateHeistClick = (e) => {
+    history.push(`/heistdogs`);
+    };
     
-    const newHeist = {
-      name: "",
-      creator_name: ""
-    }
+
     
-    const [newHeistInfo, setNewHeistInfo] = useState(newHeist)
+  
 
     function handleAdd(e) {
       setNewHeistInfo({...newHeistInfo,[e.target.name]: e.target.value})
@@ -36,7 +41,8 @@ function Home({setHeistList}) {
           console.log(data)
             setHeistList((currentHeists) => [data, ...currentHeists]);
             setNewHeistInfo(newHeist);
-            })
+            handleCreateHeistClick()
+        })
   };
 
   return (
@@ -44,8 +50,9 @@ function Home({setHeistList}) {
       <h1>You need a job done? We got the baddest dogs in the game.</h1>
       <p>These dogs may look innocent, but they're  are ready to fluff things up!</p>
       <h2>Start your heist below:</h2>
-      <Image src= {pokerdogs}
-        alt="pokerdogs"/>
+
+
+      
       <br/>
         <Form>
       <form  onSubmit={handleSubmit}>
@@ -76,11 +83,12 @@ function Home({setHeistList}) {
         <br/>
         <br/>
         <br/>
-        <button type="submit">Create Heist</button>
+        <input type="submit" value= "Create Heist"></input>
         <br/>
         <br/>
         <br/>
       </form>
+      <Image src= {pokerdogs} alt="pokerdogs"/>
       </Form>
     </HomeStyle>
   );

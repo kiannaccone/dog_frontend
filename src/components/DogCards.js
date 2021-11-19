@@ -1,16 +1,19 @@
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
-
 function DogCards({ dog: { name, hobby, quote, image, id } }) {
 
   let history = useHistory();
   const handleClick = (e) => {
     e.preventDefault();
     history.push(`/doginfo/${id}`);
-    console.log(e.target);
   };
-
-
+  
+  
+  
+  
+  
+  
+  
   return (
     <Cards onClick={handleClick}>
       <img src={image} alt={name} />
