@@ -39,7 +39,7 @@ function App() {
           <DogContainer dogList={dogList} />
         </Route>
         <Route exact path="/heistlists">
-          <HeistListContainer heistList={heistList} setHeistList={setHeistList} />
+          <HeistListContainer heistList={heistList} setHeistList={setHeistList} dogList={dogList} />
         </Route>
         <Route exact path="/doginfo/:id">
           <DogInfo setJobList = {setJobList} heistList = {heistList} />
