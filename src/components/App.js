@@ -9,6 +9,8 @@ import { useState, useEffect } from "react";
 function App() {
   const [dogList, setDogList] = useState([]);
   const [heistList, setHeistList] = useState([]);
+  const [jobList, setJobList] = useState([])
+
 
   let dogUrl = "http://localhost:9292/dogs";
 
@@ -40,7 +42,7 @@ function App() {
           <HeistListContainer heistList={heistList} setHeistList={setHeistList} />
         </Route>
         <Route exact path="/doginfo/:id">
-          <DogInfo />
+          <DogInfo setJobList = {setJobList} heistList = {heistList} />
         </Route>
       </Switch>
     </div>
