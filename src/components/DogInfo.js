@@ -11,31 +11,29 @@ function DogInfo({setJobList, heistList}) {
     const [heistID, setHeistID] = useState("")
     const [dogID, setDogID] = useState("")
     
-    const rolesList = ["The Muscle", "The Distraction", "The Magician", "The Acrobat", "The Speedster", "The Brains", "The Cutey", "The Smooth Barker", "The Inside Dog", "The Thief", "The Hacker", "The Sniffer"]
+    const rolesList = ["The Muscle💪", "The Distraction💥", "The Magician🎩", "The Acrobat🤸", "The Speedster🚗", "The Brains🧠", "The Cutey🤗", "The Smooth Barker😈", "The Inside Dog😎", "The Thief😏", "The Hacker👨‍💻", "The Sniffer👃"]
     const treatValues = [100,1000,10000]
 
     let {id} = useParams();
     
-    
-
+   
     let dogUrl = "http://localhost:9292/dogs/";
   
     useEffect(() => {
       fetch(dogUrl + id)
         .then((resp) => resp.json())
         .then(setDogInfo);
-    }, [id]) 
-     
+    }, [id])  
 
-    // setDogID(id)
- 
-   
-    const newJob = {
+    
+     const newJob = {
     role: role,
     treat_payout: treats,
     dog_id: id,
     heist_id: heistID
   }
+   
+
  
   console.log(id)
 
@@ -43,7 +41,7 @@ function DogInfo({setJobList, heistList}) {
   
   const handleSubmit = (e) => {
     e.preventDefault();
-    // window.location.href = "/heistlists";
+ 
 
     fetch('http://localhost:9292/jobs', {
       method: "POST",
@@ -68,8 +66,6 @@ function DogInfo({setJobList, heistList}) {
   return (
     <div>
       <DogCards dog = {dogInfo}/>
-      {/* <img src={dogInfo.image} alt={dogInfo.name} /> */}
-      {/* <h1>{dogInfo.name}</h1> */}
       <Hobby>
       <p>Hobby: {dogInfo.hobby}</p>
       <p>Favorite Michael Scott Quote: "{dogInfo.quote}"</p>

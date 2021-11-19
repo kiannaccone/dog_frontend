@@ -118,20 +118,6 @@ const HomeStyle = styled.div`
    font-family: 'Cutive', serif;
   `
 
-// const Form = styled.div `
-// font-family: 'Cutive', serif;
-//   width: 300px;
-//   height: 300 px;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   padding: auto;
-// left: 50%;
-// top: 50%;
-// margin-left: -25%;
-// position: absolute;
-// display: flex
-// `
 
 const Image = styled.img `
 
