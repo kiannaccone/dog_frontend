@@ -12,7 +12,7 @@ function DogInfo({setJobList, heistList}) {
     const [dogID, setDogID] = useState("")
     
     const rolesList = ["The Muscle💪", "The Distraction💥", "The Magician🎩", "The Acrobat🤸", "The Speedster🚗", "The Brains🧠", "The Cutey🤗", "The Smooth Barker😈", "The Inside Dog😎", "The Thief😏", "The Hacker👨‍💻", "The Sniffer👃"]
-    const treatValues = [100,1000,10000]
+    const treatValues = ["100","1,000","10,000", "100,000", "1,000,000"]
 
     let {id} = useParams();
     
@@ -33,9 +33,6 @@ function DogInfo({setJobList, heistList}) {
     heist_id: heistID
   }
    
-
- 
-  console.log(id)
 
   const [newJobInfo, setNewJobInfo] = useState(newJob)
   

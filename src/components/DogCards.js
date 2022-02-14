@@ -28,8 +28,6 @@ const Cards = styled.div`
     font-family: 'Special Elite', cursive;
     padding-right: 8em;
     
-    
-    
 
 
     img{
