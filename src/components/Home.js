@@ -19,9 +19,6 @@ function Home({setHeistList}) {
     };
     
 
-    
-  
-
     function handleAdd(e) {
       setNewHeistInfo({...newHeistInfo,[e.target.name]: e.target.value})
       console.log(newHeistInfo)

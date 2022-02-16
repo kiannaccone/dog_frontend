@@ -1,5 +1,6 @@
 import {useParams} from "react-router-dom"
 import React, {useEffect, useState} from 'react';
+import {useHistory} from "react-router-dom"
 import DogCards from "./DogCards";
 import styled from "styled-components";
 
@@ -10,12 +11,18 @@ function DogInfo({setJobList, heistList}) {
     const [treats, setTreats] = useState("")
     const [heistID, setHeistID] = useState("")
     const [dogID, setDogID] = useState("")
+
+    let history = useHistory()
+    const handleSubmitDog = (e) => {
+      history.push(`/heistdogs`)
+    };
     
     const rolesList = ["The Muscle💪", "The Distraction💥", "The Magician🎩", "The Acrobat🤸", "The Speedster🚗", "The Brains🧠", "The Cutey🤗", "The Smooth Barker😈", "The Inside Dog😎", "The Thief😏", "The Hacker👨‍💻", "The Sniffer👃"]
-    const treatValues = ["100","1,000","10,000", "100,000", "1,000,000"]
+
+
+    const treatValues = [100, 1000, 10000, 100000, 1000000]
 
     let {id} = useParams();
-    
    
     let dogUrl = "http://localhost:9292/dogs/";
   
@@ -33,13 +40,10 @@ function DogInfo({setJobList, heistList}) {
     heist_id: heistID
   }
    
-
   const [newJobInfo, setNewJobInfo] = useState(newJob)
   
-  const handleSubmit = (e) => {
-    e.preventDefault();
- 
-
+function handleSubmit (e) {
+      e.preventDefault();
     fetch('http://localhost:9292/jobs', {
       method: "POST",
       headers: {
@@ -52,13 +56,10 @@ function DogInfo({setJobList, heistList}) {
         console.log(data)
           setJobList((currentJobs) => [data, ...currentJobs]);
           setNewJobInfo(newJob);
+          // handleSubmitDog()
       })
   };
     
-
-
-
-
     
   return (
     <div>
