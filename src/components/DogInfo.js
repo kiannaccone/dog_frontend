@@ -35,16 +35,17 @@ function DogInfo({setJobList, heistList}) {
         .then(setDogInfo);
     }, [id])  
 
-     const newJob = {
-      role: role,
-      treat_payout: treats,
-      dog_id: id,
-      heist_id: heistID
-    }
+    
+  const newJob = {
+    role: role,
+    treat_payout: treats,
+    dog_id: id,
+    heist_id: heistID
+  }
+
+
    
-  const [newJobInfo, setNewJobInfo] = useState(newJob)
-
-
+  
 function handleSubmit (e) {
       e.preventDefault();
     fetch('http://localhost:9292/jobs', {
@@ -58,10 +59,12 @@ function handleSubmit (e) {
       .then((data) => {
         console.log(data)
           setJobList((currentJobs) => [data, ...currentJobs]);
-          handleSubmitDog()
       })
+      handleSubmitDog()
   };
-    
+
+  console.log(newJob)
+  
     
   return (
     <div>
@@ -70,6 +73,7 @@ function handleSubmit (e) {
       <p>Hobby: {dogInfo.hobby}</p>
       <p>Favorite Michael Scott Quote: "{dogInfo.quote}"</p>
       
+     
       <select
             placeholder="Select a Role"
             onChange={(e) => setRole(e.target.value)}
@@ -110,7 +114,10 @@ function handleSubmit (e) {
       
     </div>
   );
+  
 }
+
+
 
 export default DogInfo;
 
