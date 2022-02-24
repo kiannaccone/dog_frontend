@@ -24,15 +24,19 @@ const Cards = styled.div`
   font-family: "Special Elite", cursive;
   text-align: center;
   padding-bottom: 5em;
-  h1 {
-  }
 
-  h2 {
-  }
-
-  button {
-    background-color: ;
-  }
+  // display: grid;
+  // margin: auto;
+  // margin-right: 50px;
+  // margin-top: 60px;
+  // margin-left: 50px;
+  // margin-bottom: 50px;
+  // grid-template-rows: repeat(auto-fill, minmax(230px, 1fr));
+  // overflow: visible;
+  // float: left;
+  // grid-gap: 10px;
+  // padding: 30px 10px;
+  
 
   img{
     width:  200px;

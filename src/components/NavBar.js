@@ -14,16 +14,21 @@ function NavBar () {
 export default NavBar;
 
 const MenuBar = styled.ul`
-   padding: 5%;
+   padding: 3%;
    display:flex;
    justify-content:space-around;
    font-family: 'Special Elite', cursive;
+   
    li{
        list-style: none;
+
        a {
         color:black;
         text-decoration: none;
-        font-size: 25px;
+        font-size: 28px;
+        border: 2px solid black;
+        padding: 7px;
+        
     } 
 
 `

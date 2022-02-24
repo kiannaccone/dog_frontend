@@ -13,8 +13,5 @@ const CardContainer = styled.div`
 display: flex;
 flex-wrap: wrap;
 justify-content: space-around;
-// div: hover{
-//     width:410px;
-//     height: 160px;
-}
+
 `;

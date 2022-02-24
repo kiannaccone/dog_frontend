@@ -12,7 +12,7 @@ function App() {
   const [jobList, setJobList] = useState([])
 
 
-  let dogUrl = "http://localhost:9292/dogs";
+  const dogUrl = "http://localhost:9292/dogs";
 
   useEffect(() => {
     fetch(dogUrl)
@@ -20,7 +20,7 @@ function App() {
       .then(setDogList);
   }, []);
 
-  let heistUrl = "http://localhost:9292/heists";
+  const heistUrl = "http://localhost:9292/heists";
 
   useEffect(() => {
     fetch(heistUrl)

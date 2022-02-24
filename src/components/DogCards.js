@@ -37,8 +37,6 @@ const Cards = styled.div`
       object-fit: cover;
       padding-bottom: 1em;
     }
-   
-   
     
 
 `;

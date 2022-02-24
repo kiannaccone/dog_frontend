@@ -44,7 +44,7 @@ function Home({setHeistList}) {
 
   return (
     <HomeStyle>
-      <h1>You need a job done? We got the baddest dogs in the game.</h1>
+      <h1>Welcome to Dog Heists! You need a job done? We got the baddest dogs in the game.</h1>
       <p>These dogs may look innocent, but they're  are ready to fluff things up!</p>
       <h2>Start your heist below:</h2>
 
@@ -53,9 +53,9 @@ function Home({setHeistList}) {
       <br/>
         <Form>
       <form  onSubmit={handleSubmit}>
-        <label>
-          Name your Heist:
-          <input
+        <label id="heistlabel">
+          Heist Name:
+          <input id="heistinput"
             className = "name"
             type="text"
             name="name"
@@ -67,7 +67,7 @@ function Home({setHeistList}) {
         <br/>
         <br/>
         <label>
-          Boss name:
+          Boss Name:
           <input
             className = "creator"
             type="text"
@@ -80,7 +80,7 @@ function Home({setHeistList}) {
         <br/>
         <br/>
         <br/>
-        <input type="submit" value= "Create Heist"></input>
+        <input id="createbtn" type="submit" value= "Create Heist"></input>
         <br/>
         <br/>
         <br/>
@@ -101,29 +101,31 @@ const HomeStyle = styled.div`
     font-size: 30px;
     padding: 6px;
     text-align: center;
+    
     }
+
     p{
       font-family: 'Cutive', serif;
       text-align: center;
-      font-size: 15px;
+      font-size: 20px;
     }
     
 `
 
   const Form = styled.div `
-  text-align: center;
-   font-family: 'Cutive', serif;
+    text-align: center;
+    font-family: 'Cutive', serif;
+    text-size: 20px;
+
   `
 
 
 const Image = styled.img `
-
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
-
-
+  padding-bottom: 70px;
 
 `
 

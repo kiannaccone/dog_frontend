@@ -36,7 +36,7 @@ function HeistListCards ({name, creator_name, id, heistList, setHeistList, dogLi
             <h1>{name}</h1>
             <h2>by: {creator_name}</h2> 
             {showJobs ? [heistJobs] : null}
-            <button className="remove" onClick={handleDeleteHeist}>Delete Evidence</button>
+            <button id="remove" onClick={handleDeleteHeist}>Delete Evidence</button>
         </Cards>
     )
 }
@@ -47,6 +47,7 @@ const Cards = styled.div`
   font-family: "Special Elite", cursive;
   text-align: center;
   padding-bottom: 5em;
+//   padding-right:20%;
   h1 {
   }
 

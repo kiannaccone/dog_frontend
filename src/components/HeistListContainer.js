@@ -2,7 +2,8 @@ import HeistListCards from "./HeistListCards";
 
 function HeistListContainer ({heistList, setHeistList, dogList }) {
 
-    const heistCards = heistList.map((heist) => <HeistListCards key={heist.id}
+    const heistCards = heistList.map((heist) => <HeistListCards 
+    key={heist.id}
     id = {heist.id}
     heist={heist}
     heistList={heistList}

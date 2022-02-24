@@ -4,6 +4,8 @@ import {useHistory} from "react-router-dom"
 import DogCards from "./DogCards";
 import styled from "styled-components";
 
+    
+
 function DogInfo({setJobList, heistList}) {
        
     const [dogInfo, setDogInfo] = useState([]);
@@ -11,6 +13,7 @@ function DogInfo({setJobList, heistList}) {
     const [treats, setTreats] = useState("")
     const [heistID, setHeistID] = useState("")
     const [dogID, setDogID] = useState("")
+    
 
     let history = useHistory()
     const handleSubmitDog = (e) => {
@@ -32,16 +35,16 @@ function DogInfo({setJobList, heistList}) {
         .then(setDogInfo);
     }, [id])  
 
-    
      const newJob = {
-    role: role,
-    treat_payout: treats,
-    dog_id: id,
-    heist_id: heistID
-  }
+      role: role,
+      treat_payout: treats,
+      dog_id: id,
+      heist_id: heistID
+    }
    
   const [newJobInfo, setNewJobInfo] = useState(newJob)
-  
+
+
 function handleSubmit (e) {
       e.preventDefault();
     fetch('http://localhost:9292/jobs', {
@@ -49,14 +52,13 @@ function handleSubmit (e) {
       headers: {
           'Content-Type': 'application/json',
       },
-      body: JSON.stringify(newJobInfo),
+      body: JSON.stringify(newJob),
     })
       .then((resp) => resp.json())
       .then((data) => {
         console.log(data)
           setJobList((currentJobs) => [data, ...currentJobs]);
-          setNewJobInfo(newJob);
-          // handleSubmitDog()
+          handleSubmitDog()
       })
   };
     
@@ -68,12 +70,11 @@ function handleSubmit (e) {
       <p>Hobby: {dogInfo.hobby}</p>
       <p>Favorite Michael Scott Quote: "{dogInfo.quote}"</p>
       
-      
       <select
             placeholder="Select a Role"
             onChange={(e) => setRole(e.target.value)}
           >
-            <option value="none">Select an role:</option>
+            <option value="none">Select a Role:</option>
             {rolesList.map((r) => (
               <option key={r} value={r}>
                 {r}
@@ -102,12 +103,13 @@ function handleSubmit (e) {
               </option>
             ))}
           </select>
-        <button onClick={handleSubmit}>Add to Heist</button>
+          <br/>
+          <br/>
+        <button id= "addheist" onClick={handleSubmit}>Add to Heist</button>
       </Hobby>
       
     </div>
   );
-  // console.log({dog})
 }
 
 export default DogInfo;
@@ -115,6 +117,10 @@ export default DogInfo;
 const Hobby = styled.ul`
   font-family: 'Cutive', serif;
   font-size: 20px;
+  justify-content: space-evenly;
 
+  select {
+    margin: 0.5%;
+  }
 `
 
